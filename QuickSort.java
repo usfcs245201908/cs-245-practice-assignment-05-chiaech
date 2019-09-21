@@ -1,5 +1,10 @@
 public class QuickSort implements SortingAlgorithm {
 
+    @Override
+    public void sort(int[] a) {
+        qs(a, 0, a.length-1);
+    }
+
     void qs(int[] a, int left, int right){
         if(left < right){
             int p = partition(a, left, right);
@@ -27,10 +32,5 @@ public class QuickSort implements SortingAlgorithm {
         int temp = a[x];
         a[x] = a[y];
         a[y] = temp;
-    }
-
-    @Override
-    public void sort(int[] a) {
-        qs(a, 0, a.length-1);
     }
 }
