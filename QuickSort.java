@@ -5,27 +5,22 @@ public class QuickSort implements SortingAlgorithm {
             int p = partition(a, left, right);
             qs(a, left, p-1);
             qs(a, p+1, right);
+           // System.out.println("End of qs().");
         }
     }
 
-    int partition(int[]a, int left, int right){
-        if(left < right){
-            int pivot = 0;
-            int i = left + 1;
-            int j = right;
+    int partition(int[] a, int left, int right){
+        int pivot = a[right];
+        int x = left - 1;
 
-            while(i < j){
-                while((i < j) && (a[j] < a[pivot]))
-                    ++i;
-                while((i < j) && (a[j] >= a[pivot]))
-                    --j;
-                if((i < right) && (i < j))
-                    swap(a, i, j);
+        for (int i = left; i < right; i++){
+            if (a[i]<pivot){
+                x++;
+                swap(a, x, i);
             }
-            swap(a, pivot, j);
-            return j;
         }
-        return left;
+        swap(a, x + 1, right);
+        return x + 1;
     }
 
     void swap(int[] a, int x, int y){
@@ -37,6 +32,5 @@ public class QuickSort implements SortingAlgorithm {
     @Override
     public void sort(int[] a) {
         qs(a, 0, a.length-1);
-
     }
 }
