@@ -10,7 +10,6 @@ public class QuickSort implements SortingAlgorithm {
             int p = partition(a, left, right);
             qs(a, left, p-1);
             qs(a, p+1, right);
-           // System.out.println("End of qs().");
         }
     }
 
