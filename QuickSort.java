@@ -18,7 +18,7 @@ public class QuickSort implements SortingAlgorithm {
         int x = left - 1;
 
         for (int i = left; i < right; i++){
-            if (a[i]<pivot){
+            if (a[i] < pivot){
                 x++;
                 swap(a, x, i);
             }
